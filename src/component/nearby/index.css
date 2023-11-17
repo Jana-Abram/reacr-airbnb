@@ -1,0 +1,13 @@
+.nearby-attractions {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nearby-attractions__list {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  gap: 24px;
+}

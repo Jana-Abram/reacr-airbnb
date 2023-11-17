@@ -1,3 +1,17 @@
+import Page from "./component/page";
+import Header from "./component/header";
+import Title from "./component/title";
+import Photo from "./component/photo";
+import Price from "./component/price";
+import RoomList from "./component/room-list";
+import Description from "./component/description";
+import PropertyDetails from "./component/detalis";
+import Amenities from "./component/amenities";
+import ContactInfo from "./component/contact";
+import AdditionalProperties from "./component/properties"
+import GuestReviews from "./component/reviews";
+import NearbyAttractions from "./component/nearby"
+
 function App() {
   const data = {
     listing_name: "Іст-Сайд Біл",
@@ -144,7 +158,50 @@ function App() {
     ],
   };
 
-  return <div>Hello World</div>;
+  return (
+    <Page>
+      <Header />
+      <Title
+        title={data.listing_name}
+        rating={data.reviews_summary.average_rating}
+        review={data.reviews_summary.total_reviews}
+        city={data.location.city}
+        country={data.location.country}
+        superhost={data.superhost}
+      />
+      <Photo src={data.image} name={data.listing_name} />
+      <Price
+        price={data.price.original_price}
+        discount={data.price.discounted_price}
+        currency={data.price.currency}
+        cleaning={data.price.cleaning_fee}
+        service={data.price.service_fee}
+        checkin={data.availability.checkin_date}
+        checkout={data.availability.checkout_date}
+      />
+      <RoomList list={data.roomTypes} />
+      <Description title="Опис" children={data.description} />
+      <PropertyDetails
+        guests={data.property_details.guests}
+        bedrooms={data.property_details.bedrooms}
+        beds={data.property_details.beds}
+        baths={data.property_details.baths}
+      />
+      <Description title="Про сусідів" children={data.neighborhood_info} />
+      <Amenities amenities={data.amenities} />
+      <ContactInfo
+        name={data.contact_info.name}
+        image={data.contact_info.image}
+        phone={data.contact_info.phone}
+        responseTime={data.contact_info.response_time}
+        responseRate={data.contact_info.response_rate}
+        info={data.contact_info.info}
+      />
+      <AdditionalProperties additionalProperties={data.additional_properties} />
+      <GuestReviews guestReviews={data.guestReviews} />
+      <NearbyAttractions nearbyAttractions={data.nearbyAttractions} />
+    </Page>
+  );
 }
 
 export default App;

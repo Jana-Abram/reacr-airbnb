@@ -1,0 +1,42 @@
+.additional-properties {
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 1px solid #dee2e6;
+  padding: 24px;
+}
+
+.additional-properties__title {
+  font-size: 20px;
+  padding-bottom: 36px;
+  font-weight: bold;
+}
+
+.additional-properties__content {
+  display: flex;
+  gap: 36px;
+  flex-direction: column;
+}
+
+.additional-properties__item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ddd; 
+  padding-bottom: 10px;
+}
+
+.additional-properties__item-header {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 8px; 
+  color: #000;
+}
+
+.additional-properties__item-content {
+  margin-top: 5px;
+  font-size: 14px;
+  padding: 8px; 
+}
+
+
+
